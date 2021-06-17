@@ -1,0 +1,35 @@
+<header #header>
+    <div class="header-wrapper">
+        <span class="title">
+            <img src="assets\youthedesigner.svg" alt="Website logo">
+            <h1>Bric a brac</h1>
+        </span>
+        <span class="menu" #menuBtn (click)="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </span>
+    </div>
+    <div class="side-bar" #navBg (click)="toggleMenu()"></div>
+        <nav #nav>
+            <ul>
+                <li><a routerLink="" (click)="toggleMenu()">Home</a></li>
+                <li><a routerLink="" (click)="toggleMenu()">Postes</a></li>
+                <li><a routerLink="#" (click)="toggleMenu()">Articles</a></li>
+                <li><a routerLink="#" (click)="toggleMenu()">Contact</a></li>
+            </ul>
+            <div class="account">
+                <a routerLink="signin" (click)="toggleMenu()">sign-in</a>
+                <a routerLink="signup" (click)="toggleMenu()">sign-up</a>
+            </div>
+        </nav>
+    
+</header>
+
+<main>
+    <router-outlet></router-outlet>
+</main>
+
+<footer>
+    &copy; Copyright I did it 2021 MIT
+</footer>
