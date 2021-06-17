@@ -8,7 +8,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { HomeComponent } from './home/home.component';
 import { LatestArticlesComponent } from './latest-articles/latest-articles.component';
 import { SingInComponent } from './sing-in/sing-in.component';
-import { InputFieldComponent } from './input-field/input-field.component'
+import { InputFieldComponent } from './input-field/input-field.component';
+import { ContactComponent } from './contact/contact.component'
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { InputFieldComponent } from './input-field/input-field.component'
     HomeComponent,
     LatestArticlesComponent,
     SingInComponent,
-    InputFieldComponent
+    InputFieldComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
