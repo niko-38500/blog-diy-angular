@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { LatestArticlesComponent } from './latest-articles/latest-articles.component';
 import { SingInComponent } from './sing-in/sing-in.component';
 import { InputFieldComponent } from './input-field/input-field.component'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { InputFieldComponent } from './input-field/input-field.component'
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

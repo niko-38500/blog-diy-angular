@@ -1,4 +1,6 @@
+import { EventEmitter, Input, Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
     selector: 'app-input-field',
@@ -7,19 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InputFieldComponent implements OnInit {
 
-    type: string = '';
-    value: string = '';
-    label: string = '';
-    name: string = '';
+    @Input() type = '';
+    @Input() value = '';
+    @Input() label = '';
+    @Input() name = '';
+    @Output() newEvent = new EventEmitter<any>();
+    form = new FormControl();
 
     constructor() { }
 
     ngOnInit(): void {
     }
 
-    onSubmit(e: any): void {
-        console.log('logger');
-        
+    onChange(e: any): void {
+        this.newEvent.emit(e)
     }
 
 }
