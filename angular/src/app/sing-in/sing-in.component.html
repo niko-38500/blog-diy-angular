@@ -1,10 +1,9 @@
-<p>sing-in works!</p>
+<h2>Inscription</h2>
 
-<app-input-field 
-    label="Enter"
-    type="text"
-    name="toto"
-    (newEvent)='onChange($event)'
-></app-input-field>
+<app-form-builder 
+    [group]="formProperty" 
+    submitLabel="Inscription"
+    (newEvent)='onSubmit($event)'
+></app-form-builder>
 
 

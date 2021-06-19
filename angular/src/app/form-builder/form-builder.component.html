@@ -1,0 +1,7 @@
+<form (submit)="onSubmit($event)" [formGroup]='form' id="form-builder">
+    <div class="input-wrapper" *ngFor="let input of group">
+        <label for="{{ input.name }}">{{ input.label }}</label>
+        <input type="{{ input.type }}" name="{{ input.name }}" id="{{ input.name }}" formControlName="{{ input.formControl }}" />
+    </div>
+    <button type="submit" id="submit">{{ submitLabel }}</button>
+</form>
