@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,31 +8,46 @@ import { Router } from '@angular/router';
     styleUrls: ['./sing-in.component.scss']
 })
 export class SingInComponent implements OnInit {
-    form = new FormControl();
     formProperty: any = [
         {
-            formControl: "pseudo",
             type: 'text',
             label: 'Pseudo : ',
-            name: 'lastname'
+            name: 'pseudo',
+            error: 'votre pseudo doit contenir au moins 5 caractere',
+            validation: [
+                Validators.required,
+                Validators.minLength(5)
+            ]
         },
         {
-            formControl: "email",
             type: 'email',
             label: 'Email : ',
-            name: 'email'
+            name: 'email',
+            error: 'vous devez saisir une adresse email valide',
+            validation: [
+                Validators.required,
+                Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
+            ]
         },
         {
-            formControl: "password",
             type: 'password',
             label: 'Mot de passe : ',
-            name: 'password'
+            name: 'password',
+            error: 'Votre mot de passe doit contenir au moins 8 caractere dont au moins 1 chiffre une majuscule et un caractere special',
+            validation: [
+                Validators.required,
+                Validators.pattern(/^(?=.{8,}$)(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\W)(?=.*\W)/)
+            ]
         },
         {
-            formControl: "passwordConfirm",
             type: 'password',
             label: 'Confirmez mot de passe : ',
-            name: 'passwordConfirm'
+            name: 'passwordConfirm',
+            error: 'votre mot de passe doit etre identique au champ precedent',
+            validation: [
+                Validators.required,
+                Validators.pattern(/^(?=.{8,}$)(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\W)(?=.*\W)/)
+            ]
         }
     ]
 

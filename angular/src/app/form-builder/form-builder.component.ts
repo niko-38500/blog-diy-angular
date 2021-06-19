@@ -1,5 +1,5 @@
 import { EventEmitter, Input, Output, Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
     selector: 'app-form-builder',
@@ -11,17 +11,18 @@ export class FormBuilderComponent implements OnInit {
     @Output() newEvent = new EventEmitter<any>();
 
     @Input() group: {
-        formControl: string,
         type: string,
         label: string,
-        name: string
+        name: string,
+        error: string,
+        validation: any[]
     }[] = [];
 
     @Input() submitLabel: string = "";
 
     public form: FormGroup = new FormGroup({});
 
-    constructor(private formBuilder: FormBuilder) {}
+    constructor() {}
 
     ngOnInit(): void {
         let formGroup: any = {};
@@ -30,15 +31,36 @@ export class FormBuilderComponent implements OnInit {
             if (value.type === 'submit') {
                 return;
             }
-            formGroup[value.formControl] = new FormControl
+            formGroup[value.name] = new FormControl('', value.validation);
         })
         this.form = new FormGroup(formGroup);
     }
 
-    getFormControlName(): any {
+    hasErrors(input: any): any {
+        for (let field of this.group) {
+            if(field.name === input) {
+                console.log();
+                if (this.form.controls[input].errors) {
+                   if (!this.form.controls[input].errors?.required) {
+                       
+                       return true;
+                   }
+                }
+            }
+        }
+
+        return false
+        
+    }
+
+    onChange(e: any): void {
+        // console.log(e);
+        
     }
 
     onSubmit(e: any): void {
-        this.newEvent.emit(e);
+        if (this.form.valid) {
+            this.newEvent.emit(e);
+        }
     }
 }

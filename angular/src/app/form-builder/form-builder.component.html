@@ -1,7 +1,15 @@
 <form (submit)="onSubmit($event)" [formGroup]='form' id="form-builder">
     <div class="input-wrapper" *ngFor="let input of group">
         <label for="{{ input.name }}">{{ input.label }}</label>
-        <input type="{{ input.type }}" name="{{ input.name }}" id="{{ input.name }}" formControlName="{{ input.formControl }}" />
+        <input 
+            [ngClass]="{'input-error': hasErrors(input.name)}"
+            type="{{ input.type }}" 
+            name="{{ input.name }}" 
+            id="{{ input.name }}" 
+            formControlName="{{ input.name }}" 
+            (Change)="onChange($event)" 
+        />
+        <div *ngIf="hasErrors(input.name)" class="error-box">{{ input.error }}</div>
     </div>
     <button type="submit" id="submit">{{ submitLabel }}</button>
 </form>
