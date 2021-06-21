@@ -2,14 +2,14 @@
     <div class="input-wrapper" *ngFor="let input of group">
         <label for="{{ input.name }}">{{ input.label }}</label>
         <input 
-            [ngClass]="{'input-error': hasErrors(input.name)}"
+            [ngClass]="{'input-error': (hasErrors(input.name) || (input.name === 'passwordConfirm' && form.errors?.areEquals && passwordConfirm?.dirty))}"
             type="{{ input.type }}" 
             name="{{ input.name }}" 
             id="{{ input.name }}" 
             formControlName="{{ input.name }}" 
             (Change)="onChange($event)" 
         />
-        <div *ngIf="(hasErrors(input.name) && input.error)" class="error-box">{{ input.error }}</div>
+        <div *ngIf="hasErrors(input.name) && input.error" class="error-box">{{ input.error }}</div>
         <div *ngIf="input.name === 'passwordConfirm' && form.errors?.areEquals && passwordConfirm?.dirty" class="error-box">{{ input.error }}</div>
     </div>
     <button [disabled]="form.invalid" type="submit" id="submit">{{ submitLabel }}</button>
