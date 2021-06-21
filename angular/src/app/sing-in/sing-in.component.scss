@@ -1,4 +1,24 @@
 h2 {
     text-align: center;
-    margin: 1em;
+    margin-top: .5em;
+}
+
+.bad-credentials {
+    background: #dc3545;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    padding: 1em;
+    border-radius: .5em;
+}
+
+.no-account {
+    width: 100%;
+    text-align: center;
+    margin-top: 2em;
+}
+
+.no-account > a {
+    color: rgb(32, 143, 207);
+    text-decoration: none;
 }

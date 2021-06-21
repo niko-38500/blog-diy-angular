@@ -7,7 +7,7 @@ header {
         background: rgba(39, 37, 37, 0.856);
         display: flex;
         justify-content: space-between;
-        padding: 1em;
+        padding: .5em;
         color: rgba(255, 255, 255, 0.774);
     }
 
@@ -33,6 +33,7 @@ header {
         flex-direction: column;
         margin-right: .8em;
         transition: .8s;
+        z-index: 2000;
     }
 
     .bar {
@@ -40,18 +41,10 @@ header {
         height: 5px;
         background-color: #fff;
         transition: 0.4s;
-        z-index: 1000;
     }
 
     .bar:not(:last-child) {
         margin-bottom: .3em;
-    }
-
-    .change {
-        // position: fixed;
-        // right: 20px;
-        // top: 50px;
-        z-index: 2000;
     }
       
     /* Rotate first bar */
@@ -87,7 +80,7 @@ header {
     }
 
     .side-bar {
-        height: 100%;
+        height: 100vh;
         width: 100%;
         background: rgba(70, 65, 65, 0.918);
         display: none;
@@ -103,7 +96,7 @@ header {
         top: 0;
         right: 0;
         width: 60%;
-        height: 100%;
+        height: 100vh;
         background: rgba(41, 39, 39, 0.995);
         transition: .7s;
         transform: translateX(100%);

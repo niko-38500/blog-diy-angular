@@ -31,6 +31,21 @@ export class LatestArticlesComponent implements OnInit {
             h1: 'titre',
             content: "lorem ipsum dolor sit amet",
             author: "niko"
+        },
+        {
+            h1: 'titre',
+            content: "lorem ipsum dolor sit amet",
+            author: "niko"
+        },
+        {
+            h1: 'titre',
+            content: "lorem ipsum dolor sit amet",
+            author: "niko"
+        },
+        {
+            h1: 'titre',
+            content: "lorem ipsum dolor sit amet",
+            author: "niko"
         }
     ];
 

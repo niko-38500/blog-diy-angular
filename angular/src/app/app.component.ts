@@ -1,4 +1,6 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { SingInComponent } from './sing-in/sing-in.component';
 
 @Component({
     selector: 'app-root',
@@ -10,6 +12,10 @@ export class AppComponent implements AfterViewInit {
     @ViewChild('navBg') sidebarBg: any;
     @ViewChild('menuBtn') menuBtn: any;
     @ViewChild('header') header: any;
+
+    constructor(
+        private dialog: MatDialog
+    ) {}
 
     ngAfterViewInit(): void {
         let prevScrollpos: any = window.pageYOffset;
@@ -24,8 +30,14 @@ export class AppComponent implements AfterViewInit {
             }
             prevScrollpos = currentScrollPos;
         });
+    }
 
-
+    openDialog() {
+        const dialogRef = this.dialog.open(SingInComponent, {
+            backdropClass: "modal-dialog",
+            width: "85%",
+            minHeight: "23em"
+        });
     }
 
     toggleMenu(): void {
@@ -35,5 +47,6 @@ export class AppComponent implements AfterViewInit {
         target.classList.toggle("change");
         nav.classList.toggle("translate");
         navBg.classList.toggle("translate");
+        document.body.classList.toggle('disable-scroll');
     }
 }

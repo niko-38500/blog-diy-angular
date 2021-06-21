@@ -10,6 +10,8 @@ import { LatestArticlesComponent } from './latest-articles/latest-articles.compo
 import { SingInComponent } from './sing-in/sing-in.component';
 import { FormBuilderComponent } from './form-builder/form-builder.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SignupComponent } from './signup/signup.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     LatestArticlesComponent,
     SingInComponent,
-    FormBuilderComponent
+    FormBuilderComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MatIconModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

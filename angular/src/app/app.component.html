@@ -2,7 +2,7 @@
     <div class="header-wrapper">
         <span class="title">
             <img src="assets\youthedesigner.svg" alt="Website logo">
-            <h1>Bric a brac</h1>
+            <h1 routerLink="">Bric a brac</h1>
         </span>
         <span class="menu" #menuBtn (click)="toggleMenu()">
             <span class="bar"></span>
@@ -19,7 +19,7 @@
                 <li><a routerLink="#" (click)="toggleMenu()">Contact</a></li>
             </ul>
             <div class="account">
-                <a routerLink="signin" (click)="toggleMenu()">sign-in</a>
+                <a (click)="toggleMenu(); openDialog()">sign-in</a>
                 <a routerLink="signup" (click)="toggleMenu()">sign-up</a>
             </div>
         </nav>

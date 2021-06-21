@@ -9,7 +9,8 @@
             formControlName="{{ input.name }}" 
             (Change)="onChange($event)" 
         />
-        <div *ngIf="hasErrors(input.name)" class="error-box">{{ input.error }}</div>
+        <div *ngIf="(hasErrors(input.name) && input.error)" class="error-box">{{ input.error }}</div>
+        <div *ngIf="input.name === 'passwordConfirm' && form.errors?.areEquals && passwordConfirm?.dirty" class="error-box">{{ input.error }}</div>
     </div>
-    <button type="submit" id="submit">{{ submitLabel }}</button>
+    <button [disabled]="form.invalid" type="submit" id="submit">{{ submitLabel }}</button>
 </form>

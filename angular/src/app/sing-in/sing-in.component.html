@@ -1,9 +1,14 @@
-<h2>Inscription</h2>
+<h2 mat-dialog-title>Connection</h2>
+<div mat-dialog-content>
+    <div *ngIf="credentialsOk" class="bad-credentials">
+        Email ou mot de passe incorrect
+    </div>
 
-<app-form-builder 
-    [group]="formProperty" 
-    submitLabel="Inscription"
-    (newEvent)='onSubmit($event)'
-></app-form-builder>
+    <app-form-builder
+        [group]="formBuilding"
+        submitLabel="Connection"
+        (newEvent)='onSubmit($event)'
+    ></app-form-builder>
 
-
+    <div class="no-account">vous n'avez pas encore de compte ? <a (click)="closeDialog()" routerLink="signup">Inscription</a></div>
+</div>

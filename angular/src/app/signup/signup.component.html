@@ -1,0 +1,8 @@
+<h2>Inscription</h2>
+
+<app-form-builder 
+    [group]="formProperty" 
+    submitLabel="Inscription"
+    [validationGroup]="areEquals"
+    (newEvent)='onSubmit($event)'
+></app-form-builder>

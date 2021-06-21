@@ -42,6 +42,10 @@ input {
   margin-bottom: 2em;
 }
 
+#submit[disabled] {
+  background: rgba(71, 66, 66, 0.76);
+}
+
 .input-error {
   border: red 2px solid;
 }
