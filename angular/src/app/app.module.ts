@@ -12,6 +12,8 @@ import { FormBuilderComponent } from './form-builder/form-builder.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ContactComponent } from './contact/contact.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     LatestArticlesComponent,
     SingInComponent,
     FormBuilderComponent,
-    SignupComponent
+    SignupComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatIconModule,
     FormsModule,
     ReactiveFormsModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

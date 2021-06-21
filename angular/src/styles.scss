@@ -33,14 +33,14 @@ $angular-theme: mat.define-light-theme((
 // that you are using.
 @include mat.all-component-themes($angular-theme);
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
 /* You can add global styles to this file, and also import other style files */
 
 html, body { min-height: 100vh; }
 body {
   padding: 0; 
   margin: 0; 
-  font-family: Roboto, "Helvetica Neue", sans-serif; 
+  font-family: 'Oswald', sans-serif;
   position: relative;
   background: rgba(46, 43, 43, 0.918);
   color: #fff;

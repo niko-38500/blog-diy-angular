@@ -1,0 +1,24 @@
+<div class="main" #mainId >
+    <div #mainDiv>
+    <h1 class='contact'>Contactez nous !</h1>
+    <form (submit)="sendEmail($event)" >
+        <div class="form" >
+
+            <label class='nom'>Nom</label>
+            <input #nameId class="inputName" type="text" name="name" placeholder="Nom" value="">
+
+            <label class='prenom'>Prénom</label>
+            <input #firstNameId value="" class="inputFirstName" type="text" name="firstName" placeholder="Prénom">
+
+            <label class='email'>Email</label>
+            <input #emailId class="inputEmail" value="" type="text" name="email" placeholder="Email">
+
+            <label class='message'>Message</label>
+            <textarea #messageId class="inputMessage" value="" type="text" name="message"
+                TextMode="MultiLine"></textarea>
+
+            <button id="myButton" class='bouton' type="submit" >Envoyer</button>
+        </div>
+    </form>
+    </div>
+</div>
