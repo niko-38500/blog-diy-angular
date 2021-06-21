@@ -9,7 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { LatestArticlesComponent } from './latest-articles/latest-articles.component';
 import { SingInComponent } from './sing-in/sing-in.component';
 import { InputFieldComponent } from './input-field/input-field.component';
-import { ContactComponent } from './contact/contact.component'
+import { ContactComponent } from './contact/contact.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ContactComponent } from './contact/contact.component'
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
