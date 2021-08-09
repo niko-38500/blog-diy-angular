@@ -41,8 +41,8 @@ export class NewPostComponent implements OnInit {
             "title": this.form.get('subject')?.value,
             "content": this.form.get('message')?.value,
             "slug": slugify(this.form.get('subject')?.value),
-            "category": "api/category/" + this.category,
-            "author": "api/users/" + this.user?.id
+            "category_id": "api/category/" + this.category,
+            "author_id": "api/users/" + this.user?.id
         }
         
 

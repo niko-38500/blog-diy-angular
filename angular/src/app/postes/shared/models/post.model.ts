@@ -1,18 +1,20 @@
 export interface Post {
     id?: number,
-    category: {
+    category?: {
         id: number,
         name: string
-    } | string | null,
+    },
+    category_id?: string | null,
     title: string,
     content: string,
     slug: string,
-    author: {
+    author?: {
         id: number,
         email: string,
         pseudo: string,
         role: string
-    } | string,
+    },
+    author_id?: string | null,
     comments?: {
         id: number,
         content: string,
