@@ -1,0 +1,51 @@
+h2 {
+    text-align: center;
+    margin: 1em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+}
+
+label {
+    margin: .5em;
+}
+
+input {
+    height: 2.3em;
+    border: none;
+    border-radius: 0.6em;
+    margin: .5em 0;
+    background: rgb(255, 253, 253);
+}
+
+input:focus {
+    outline: none;
+}
+
+.error-form {
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: .5em;
+    padding: .8em;
+    text-align: center;
+    background: #d9534f linear-gradient(180deg, rgba(white, .15), rgba(white, 0));
+}
+
+button {
+    margin-top: 1.5em;
+    height: 3em;
+    border-radius: .5em;
+    background: #000;
+    color: #fff;
+}
+
+.ng-valid:not(form)  {
+    border: 3px solid #42A948; /* green */
+}
+  
+  .ng-invalid:not(form).ng-touched  {
+    border: 3px solid #a94442; /* red */
+  }

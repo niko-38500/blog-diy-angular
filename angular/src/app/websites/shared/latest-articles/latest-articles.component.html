@@ -1,0 +1,10 @@
+<div class="latest-articles" #hzScrollDiv>
+    <div *ngFor='let post of latestPostes' class="article">
+        <a [routerLink]="['/postes/show', post.slug]">
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.content | slice:0:30 }}...</p>
+            <span>Crée par : {{ post.author?.pseudo }}</span>
+        </a>
+    </div>
+</div>
+<!-- (mousewheel)="scrollHorizontally($event)" -->

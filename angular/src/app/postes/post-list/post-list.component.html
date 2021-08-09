@@ -1,0 +1,28 @@
+<h2>Postes</h2>
+
+<div class="text-center">
+    <button class="new-post-btn" (click)="chooseCategory()">Crée un nouveau poste</button>
+</div>
+
+<div class="category" *ngFor="let cat of category">
+    <h3 class="category-name">{{ cat.name }}</h3>
+    <div class="posts-list" *ngFor="let article of articles">
+        <ng-container *ngIf="article.category?.name === cat.name">
+            <!--<mat-icon class="material-icons-outlined">question_answer</mat-icon>--> 
+            <a [routerLink]='["/post", article.slug]' class="post-link"><h4>{{ uc_first(article.title) }} <small>Crée par: {{ article.author?.pseudo }}</small></h4></a>
+        </ng-container>
+    </div>
+</div>
+
+<ng-template #categoryDialog>
+    <div id="dialog-wrapper">
+        <h2>Dans quel categorie voulez vous poster votre sujet ?</h2>
+        <select name="select-category" id="select-category" [(ngModel)]="select" required>
+            <option value="" selected disabled>--- Categories ---</option>
+            <ng-container *ngFor="let category of category">
+                <option value="{{ category.slug }}">{{ uc_first(category.name) }}</option>
+            </ng-container>
+        </select>
+        <button id="add-post-btn" (click)="newPost()" [disabled]="select === ''">Crée sujet</button>
+    </div>    
+</ng-template>

@@ -1,6 +1,5 @@
 import { EventEmitter, Input, Output, Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validator, Validators } from '@angular/forms';
-import { areEqualsValidator } from '../shared/are-equals-validator.directive';
 
 @Component({
     selector: 'app-form-builder',
@@ -36,31 +35,17 @@ export class FormBuilderComponent implements OnInit {
             }
             formGroup[value.name] = new FormControl('', value.validation);
         })
-        console.log();
         // let val = this[this.validationGroup as keyof this]
         this.form = new FormGroup(formGroup, this.validationGroup);
     }
 
     get passwordConfirm() {
-        console.log(this.form.get('passwordConfirm'));
-        
         return this.form.get('passwordConfirm');
     }
-
-    // areEquals(): any {
-        
-
-    //     return true
-    //     return {
-    //       areEqual: false
-    //     };
-        
-    // }
 
     hasErrors(input: any): any {
         for (let field of this.group) {
             if(field.name === input) {
-                console.log();
                 if (this.form.controls[input].errors) {
                    if (!this.form.controls[input].errors?.required) {
                        return true;
@@ -70,11 +55,6 @@ export class FormBuilderComponent implements OnInit {
         }
 
         return false
-        
-    }
-
-    onChange(e: any): void {
-        // console.log(e);
         
     }
 

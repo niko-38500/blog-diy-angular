@@ -1,20 +1,34 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { SignupComponent } from './signup/signup.component';
-import { SingInComponent } from './sing-in/sing-in.component';
-import { ContactComponent } from './contact/contact.component';
+import { ContactComponent } from './members/contact/contact.component';
+import { UserGuard } from './core/guards/user.guard';
 
 ContactComponent
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'signin', component: SingInComponent},
-  {path: 'signup', component: SignupComponent},
-  {path: 'contact', component: ContactComponent}
+    { 
+        path: '',
+        loadChildren: () => import('./websites/websites.module').then(m => m.WebsitesModule)
+    },
+    { 
+        path: '', 
+        loadChildren: () => import('./authorizations/authorizations.module').then(m => m.AuthorizationsModule)
+    },
+    { 
+        path: 'contact', 
+        component: ContactComponent 
+    },
+    {
+        path: 'postes', 
+        loadChildren: () => import('./postes/postes.module').then(m => m.PostesModule)
+    },
+    {
+        path: '',
+        loadChildren: () => import('./members/members.module').then(m => m.MembersModule)
+    }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
 export class AppRoutingModule { }

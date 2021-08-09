@@ -1,0 +1,33 @@
+h2 {
+    margin: 1em;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+}
+
+label {
+    margin: .5em;
+}
+
+input {
+    height: 2em;
+    border-radius: .6em;
+    margin-bottom: 1em;
+}
+
+textarea {
+    height: 13em;
+    margin-bottom: 1.5em;
+    border-radius: .6em;
+}
+
+button {
+    height: 2.5em;
+    border-radius: .6em;
+    color: white;
+    background: rgb(75, 66, 66);
+    font-size: 1em;
+}

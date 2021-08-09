@@ -1,0 +1,91 @@
+::ng-deep.mat-dialog-container {
+    background: rgb(54, 47, 47);
+    min-height: 10em;
+    max-width: 22em;
+    color: white;
+    padding: 0;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: .5em;
+}
+
+::ng-deep.mat-dialog-content {
+    padding: 0;
+    margin: 0;
+}
+
+::ng-deep.mat-dialog-title {
+    padding: 0;
+    margin: 1em 0 .3em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 90%;
+}
+
+h2 {
+    text-align: center;
+    margin-top: .5em;
+    font-size: 1.6em;
+    font-weight: 500;
+}
+
+.bad-credentials {
+    background: #dc3545;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    padding: 1em;
+    border-radius: .5em;
+}
+
+label {
+    margin: .5em;
+}
+
+input {
+    height: 2.3em;
+    border: none;
+    border-radius: 0.6em;
+    margin: .5em 0;
+    background: rgb(255, 253, 253);
+}
+
+input:focus {
+    outline: none;
+}
+
+.error-form {
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: .5em;
+    padding: .8em;
+    text-align: center;
+    background: #d9534f linear-gradient(180deg, rgba(white, .15), rgba(white, 0));
+}
+
+.no-account {
+    width: 100%;
+    text-align: center;
+    margin: 1em 0;
+}
+
+.no-account > a {
+    color: rgb(32, 143, 207);
+    text-decoration: none;
+}
+
+button {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 4.5rem;
+    background: #ff7300;
+    color: #fff;
+    border-radius: 0 0 .5em .5em;
+    font-size: 1.3em;
+    font-weight: 750;
+    box-shadow: unset;
+}

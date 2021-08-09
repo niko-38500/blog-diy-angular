@@ -1,0 +1,21 @@
+<h2>Créer un poste</h2>
+
+<form id="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label for="subject">Sujet :</label>
+    <input type="text" id="subject" name="subject" formControlName="subject" class="form-control" />
+    <ng-container *ngIf="form.get('subject')?.dirty">
+        <div class="error-form" *ngIf="form.get('subject')?.hasError('required')">
+            Veuillez saisir un sujet
+        </div>
+    </ng-container>
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" formControlName="message" class="form-control"></textarea>
+    <ng-container *ngIf="form.get('message')?.dirty">
+        <div class="error-form" *ngIf="form.get('subject')?.hasError('required')">
+            Veuillez saisir un message
+        </div>
+    </ng-container>
+
+    <button>Publier</button>
+</form>

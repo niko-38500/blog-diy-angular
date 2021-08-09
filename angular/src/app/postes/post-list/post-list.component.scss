@@ -1,0 +1,56 @@
+h2 {
+    font-size: 2em;
+    margin: 1em;
+    color: rgba(255, 255, 255, 0.856);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.new-post-btn {
+    padding: 0.4em 3em;
+    border-radius: 1em;
+    margin: 1em auto;
+    font-size: 1.3em;
+    background: #c9521c;
+    color: #fff;
+    border: unset;
+    cursor: pointer;
+}
+
+.category-name {
+    background: #000;
+    text-align: center;
+}
+
+.posts-list {
+    font-size: 1.3em;
+    display: flex;
+
+    .material-icons-outlined {
+        align-self: center;
+    }
+}
+
+.post-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+#dialog-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+        font-size: 2em;
+    }
+}
+
+#select-category {
+    margin: 1em;
+}
+
+#add-post-btn {
+    margin: 1.5em 1em;
+}
