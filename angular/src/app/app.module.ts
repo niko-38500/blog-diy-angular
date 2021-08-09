@@ -1,41 +1,24 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatIconModule } from '@angular/material/icon';
-import { HomeComponent } from './home/home.component';
-import { LatestArticlesComponent } from './latest-articles/latest-articles.component';
-import { SingInComponent } from './sing-in/sing-in.component';
-import { FormBuilderComponent } from './form-builder/form-builder.component'
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SignupComponent } from './signup/signup.component';
-import { MatDialogModule } from '@angular/material/dialog';
-import { ContactComponent } from './contact/contact.component';
-import { HttpClientModule } from '@angular/common/http';
+import { FlashMessageComponent } from './shared/flash-message/flash-message.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    LatestArticlesComponent,
-    SingInComponent,
-    FormBuilderComponent,
-    SignupComponent,
-    ContactComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatIconModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatDialogModule,
-    HttpClientModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        FlashMessageComponent
+    ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        SharedModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
+
 export class AppModule { }

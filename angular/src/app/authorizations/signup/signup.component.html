@@ -1,0 +1,58 @@
+<h2>Inscription</h2>
+
+<!-- <app-form-builder 
+    [group]="formProperty" 
+    submitLabel="Inscription"
+    (newEvent)='onSubmit($event)'
+></app-form-builder> -->
+<form [formGroup]="form" (ngSubmit)="register()">
+    <label for="pseudo">Pseudo :</label>
+    <input type="text" name="pseudo" formControlName="pseudo" class="form-control">
+    <ng-container *ngIf="form.get('pseudo')?.dirty">
+        <div class="error-form" *ngIf="form.get('pseudo')?.hasError('required')">
+            Le pseudo est requis
+        </div>
+        <div class="error-form" *ngIf="form.get('pseudo')?.hasError('minlength')">
+            Votre pseudo doit contenir au moins 5 caractere
+        </div>
+        <div class="error-form" *ngIf="form.get('pseudo')?.hasError('maxlength')">
+            Votre pseudo doit contenir maximum 15 caractere
+        </div>
+    </ng-container>
+
+    <label for="email">Email :</label>
+    <input type="email" name="email" formControlName="email" class="form-control">
+    <ng-container *ngIf="form.get('email')?.dirty">
+        <div class="error-form" *ngIf="form.get('email')?.hasError('required')">
+            L'email est requis
+        </div>
+        <div class="error-form" *ngIf="form.get('email')?.hasError('pattern')">
+            Veuillez rentré un email valide
+        </div>
+    </ng-container>
+
+    <label for="password">Mot de passe :</label>
+    <input type="password" name="password" formControlName="password" class="form-control">
+    <ng-container *ngIf="form.get('password')?.dirty">
+        <div class="error-form" *ngIf="form.get('password')?.hasError('required')">
+            Le mot de passe est requis
+        </div>
+        <div class="error-form" *ngIf="form.get('password')?.hasError('pattern')">
+            Votre mot de passe doit contenir au moins 8 caractere, 
+            dont au moins 1 majuscule, 1 numero et 1 caratere special
+        </div>
+    </ng-container>
+
+    <label for="confirm">Confirmez mot de passe :</label>
+    <input type="password" name="confirm" formControlName="confirm" class="form-control">
+    <ng-container *ngIf="form.get('confirm')?.dirty">
+        <div class="error-form" *ngIf="form.get('confirm')?.hasError('required')">
+            veuillez confirmer votre mot de passe
+        </div>
+        <div class="error-form" *ngIf="form.errors?.areEquals">
+            Confirmation differente du mot de passe
+        </div>
+    </ng-container>
+
+    <button [disabled]="form.invalid">Envoyer</button>
+</form>

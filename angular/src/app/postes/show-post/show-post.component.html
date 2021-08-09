@@ -1,0 +1,11 @@
+<h2>{{ post.category_id }}</h2>
+<article class="author-post">
+    <h3 class="author-title">{{ post.title }}</h3>
+    <p class="author-content">{{ post.content }}</p>
+    <small class="author-name">crée par : {{ post.author_id }}</small>
+</article>
+
+<article class="author-post" *ngFor="let comment of post.comments">
+    <p class="author-content">{{ comment.content }}</p>
+    <small class="author-name">crée par : {{ comment.author_id.pseudo }}</small>
+</article>

@@ -1,0 +1,33 @@
+<h2 mat-dialog-title>Connection</h2>
+<div mat-dialog-content>
+    <div *ngIf="badCredentials" class="bad-credentials">
+        Email ou mot de passe incorrect
+    </div>
+
+    <form id="login-form" [formGroup]="form" (ngSubmit)="login()">
+        <label for="email">Email :</label>
+        <input type="email" name="email" formControlName="email" class="form-control">
+        <ng-container *ngIf="form.get('email')?.dirty">
+            <div class="error-form" *ngIf="form.get('email')?.hasError('required')">
+                L'email est requis
+            </div>
+        </ng-container>
+
+        <label for="password">Mot de passe :</label>
+        <input type="password" name="password" formControlName="password" class="form-control">
+        <ng-container *ngIf="form.get('password')?.dirty">
+            <div class="error-form" *ngIf="form.get('password')?.hasError('required')">
+                Le mot de passe est requis
+            </div>
+        </ng-container>
+    </form>
+        
+    <div class="no-account">
+        vous n'avez pas encore de compte ? 
+        <a (click)="closeDialog()" routerLink="signup">
+            Inscription
+        </a>
+    </div>
+    
+    <button type='submit' form="login-form" [disabled]="form.invalid">Envoyer</button>
+</div>

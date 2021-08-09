@@ -11,20 +11,26 @@
         </span>
     </div>
     <div class="side-bar" #navBg (click)="toggleMenu()"></div>
-        <nav #nav>
-            <ul>
-                <li><a routerLink="" (click)="toggleMenu()">Home</a></li>
-                <li><a routerLink="" (click)="toggleMenu()">Postes</a></li>
-                <li><a routerLink="#" (click)="toggleMenu()">Articles</a></li>
-                <li><a routerLink="contact" (click)="toggleMenu()">Contact</a></li>
-            </ul>
-            <div class="account">
-                <a (click)="toggleMenu(); openDialog()">sign-in</a>
-                <a routerLink="signup" (click)="toggleMenu()">sign-up</a>
-            </div>
-        </nav>
-    
+    <nav #nav>
+        <ul>
+            <li><a routerLink="" (click)="toggleMenu()">Home</a></li>
+            <li><a routerLink="postes" (click)="toggleMenu()">Postes</a></li>
+            <li><a routerLink="#" (click)="toggleMenu()">Articles</a></li>
+            <li><a routerLink="contact" (click)="toggleMenu()">Contact</a></li>
+        </ul>
+        <div class="account" *ngIf="!user">
+            <a (click)="toggleMenu(); openDialog()">sign-in</a>
+            <a routerLink="signup" (click)="toggleMenu()">sign-up</a>
+        </div>
+        <div class="account" *ngIf="user">
+            <a (click)="toggleMenu(); logout()">Deconnexion</a>
+            <a routerLink="signup" (click)="toggleMenu()">Mon compte <small>({{ user.pseudo }})</small></a>
+        </div>
+    </nav>
 </header>
+
+<ng-flash-message>
+</ng-flash-message>
 
 <main>
     <router-outlet></router-outlet>

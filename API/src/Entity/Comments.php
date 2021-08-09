@@ -3,8 +3,11 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
+use App\Controller\CommentController;
 use App\Repository\CommentsRepository;
 use Doctrine\ORM\Mapping as ORM;
+use phpDocumentor\Reflection\DocBlock\Tags\Method;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=CommentsRepository::class)
@@ -17,27 +20,25 @@ class Comments
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
+    #[Groups(["postes:read"])]
     private $id;
 
     /**
      * @ORM\ManyToOne(targetEntity=Postes::class, inversedBy="comments")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $post_id;
+    private $post;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Users::class, inversedBy="comments")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="comments")
      */
-    private $author_id;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $title;
+    #[Groups(["postes:read"])]
+    private $author;
 
     /**
      * @ORM\Column(type="text")
      */
+    #[Groups(["postes:read"])]
     private $content;
 
     public function getId(): ?int
@@ -45,38 +46,26 @@ class Comments
         return $this->id;
     }
 
-    public function getPostId(): ?Postes
+    public function getPost(): ?Postes
     {
-        return $this->post_id;
+        return $this->post;
     }
 
-    public function setPostId(?Postes $post_id): self
+    public function setPost(?Postes $post): self
     {
-        $this->post_id = $post_id;
+        $this->post = $post;
 
         return $this;
     }
 
-    public function getAuthorId(): ?Users
+    public function getAuthor(): ?User
     {
-        return $this->author_id;
+        return $this->author;
     }
 
-    public function setAuthorId(?Users $author_id): self
+    public function setAuthor(?User $author): self
     {
-        $this->author_id = $author_id;
-
-        return $this;
-    }
-
-    public function getTitle(): ?string
-    {
-        return $this->title;
-    }
-
-    public function setTitle(string $title): self
-    {
-        $this->title = $title;
+        $this->author = $author;
 
         return $this;
     }

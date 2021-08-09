@@ -19,7 +19,7 @@ label {
   text-align: center;
 }
 
-input {
+input, textarea {
   margin-top: 0.5em;
   background-color: rgba(94, 90, 90, 0.233);
   border: none;
@@ -28,6 +28,9 @@ input {
   border-radius: 1em;
   box-shadow: #8c92ac;
   color: white;
+}
+
+input {
   height: 2em;
 }
 
