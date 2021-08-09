@@ -21,3 +21,7 @@ symfony console doctrine:migration:migrate
 symfony serve
 ```
 * and now you just have to open your navigator and go to the localhost url of angular http://localhost:4200
+
+* please open the website in adaptive mobile view with your navigator because responsive view is not yet available. 
+
+Some update will come soon !
