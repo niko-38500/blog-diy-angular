@@ -16,6 +16,7 @@ npm i
 cd ../API
 composer install
 symfony console doctrine:database:create
+symfony console make:migration
 symfony console doctrine:migration:migrate
 ```
 * and finally start the API and Angular server
@@ -38,6 +39,7 @@ npm i
 cd ../API
 composer install
 symfony console doctrine:database:create
+symfony console make:migration
 symfony console doctrine:migration:migrate
 symfony serve -d
 cd ../angular
