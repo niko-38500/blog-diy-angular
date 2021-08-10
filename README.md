@@ -11,9 +11,10 @@ cd angular
 npm i
 ```
 
-* do the same for the api but you have to init the database first with these following lines
+* do the same for the api but you have to create the migrations folder and init the database first with these following lines
 ```shell
 cd ../API
+mkdir migrations
 composer install
 symfony console doctrine:database:create
 symfony console make:migration
@@ -37,6 +38,7 @@ npm start
 cd angular
 npm i
 cd ../API
+mkdir migrations
 composer install
 symfony console doctrine:database:create
 symfony console make:migration
