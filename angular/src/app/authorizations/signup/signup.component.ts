@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { FlashService } from '../../shared/services/flash.service';
 import { RegisterFormService } from './register-form.service';
 import { FormGroup } from '@angular/forms';

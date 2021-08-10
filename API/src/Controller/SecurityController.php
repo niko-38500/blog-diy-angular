@@ -19,9 +19,4 @@ class SecurityController extends AbstractController
             'roles' => $user->getRoles()
         ]);
     }
-
-    #[Route(path: 'api/register', name: 'api_register', methods: ['POST'])]
-    public function register() {
-
-    }
 }

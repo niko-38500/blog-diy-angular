@@ -5,6 +5,7 @@ namespace App\Entity;
 use ApiPlatform\Core\Action\NotFoundAction;
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Controller\MeController;
+use App\Controller\RegisterController;
 use Doctrine\Common\Collections\Collection;
 use Symfony\Component\Validator\Constraints as Assert;
 use App\Repository\UserRepository;
@@ -215,55 +216,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->postes;
     }
 
-    public function addPoste(Postes $poste): self
-    {
-        if (!$this->postes->contains($poste)) {
-            $this->postes[] = $poste;
-            $poste->setUserId($this);
-        }
-
-        return $this;
-    }
-
-    public function removePoste(Postes $poste): self
-    {
-        if ($this->postes->removeElement($poste)) {
-            // set the owning side to null (unless already changed)
-            if ($poste->getUserId() === $this) {
-                $poste->setUserId(null);
-            }
-        }
-
-        return $this;
-    }
-
     /**
      * @return Collection|Comments[]
      */
     public function getComments(): Collection
     {
         return $this->comments;
-    }
-
-    public function addComment(Comments $comment): self
-    {
-        if (!$this->comments->contains($comment)) {
-            $this->comments[] = $comment;
-            $comment->setAuthorId($this);
-        }
-
-        return $this;
-    }
-
-    public function removeComment(Comments $comment): self
-    {
-        if ($this->comments->removeElement($comment)) {
-            // set the owning side to null (unless already changed)
-            if ($comment->getAuthorId() === $this) {
-                $comment->setAuthorId(null);
-            }
-        }
-
-        return $this;
     }
 }

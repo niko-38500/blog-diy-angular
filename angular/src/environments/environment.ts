@@ -7,7 +7,7 @@ export const environment = {
   api: {
     authorizations: {
       login: "https://localhost:8000/api/login",
-      register: "https://localhost:8000/api/users"
+      register: "https://localhost:8000/api/register"
     }
   },
   storage: {
